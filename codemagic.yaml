@@ -1,7 +1,17 @@
 workflows:
   android-prod:
-    triggers:
-      - push
+    name: Android Production Build
+
+    triggering:
+      events:
+        - push
+      branch_patterns:
+        - pattern: main
+          include: true
+
+    environment:
+      flutter: stable
+
     scripts:
       - flutter pub get
       - flutter build appbundle

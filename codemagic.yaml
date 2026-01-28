@@ -1,0 +1,7 @@
+workflows:
+  android-prod:
+    triggers:
+      - push
+    scripts:
+      - flutter pub get
+      - flutter build appbundle
